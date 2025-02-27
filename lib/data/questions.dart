@@ -2,7 +2,7 @@ import 'package:quiz_app/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'How did Ed lose his arm in FMA', 
+    'How did Ed lose his arm in FMA?', 
     [
       'Putting his brother\'s soul in a suit of armor', 
       'In a freak cooking accident', 
@@ -38,7 +38,7 @@ const questions = [
     ]
   ),
   QuizQuestion(
-    'What studio created your lie in april', 
+    'What studio created your lie in april?', 
     [
       'Kyoto Studio', 
       'MAPPA', 
@@ -46,4 +46,4 @@ const questions = [
       'Aniplex'
     ]
   ),
-]
+];
