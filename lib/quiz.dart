@@ -21,13 +21,23 @@ class _QuizState extends State<Quiz> {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        //selectedAnswers = []; //TODO: 
-        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers,);
+        activeScreen = ResultsScreen(
+          chosenAnswers: selectedAnswers,
+          restartQuiz: restartQuiz, 
+        );
       });
     }
   }
 
-  @override
+  // Method to restart the quiz
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers.clear(); 
+      activeScreen = StartScreen(switchScreen);
+    });
+  }
+
+ @override
   void initState() {
     activeScreen = StartScreen(switchScreen);
     super.initState();
@@ -57,7 +67,7 @@ class _QuizState extends State<Quiz> {
               ],
             ),
           ),
-          child: activeScreen,
+          child: activeScreen ?? const Center(child: CircularProgressIndicator()), // Safeguard if activeScreen is null
         ),
       ),
     );

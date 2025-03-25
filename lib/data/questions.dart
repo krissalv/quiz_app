@@ -4,9 +4,9 @@ const questions = [
   QuizQuestion(
     'What is a common application mainly used for 3D modeling?', 
     [
-      'Blender', 
+      'Blender', //correct answer
       'Procreate', 
-      'Clip Studio Paint', //correct answer
+      'Clip Studio Paint', 
       'Fire Alpaca'
     ]
   ),

@@ -6,16 +6,18 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
+    required this.restartQuiz, 
   });
 
   final List<String> chosenAnswers;
+  final VoidCallback restartQuiz; // Callback for restarting the quiz
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
       bool isAnswerCorrect = chosenAnswers[i] == questions[i].answers[0];
-      Color circleColor = isAnswerCorrect ? const Color.fromARGB(255, 107, 198, 255) : const Color.fromARGB(255, 244, 54, 108);
+      Color circleColor = isAnswerCorrect? const Color.fromARGB(255, 107, 198, 255): const Color.fromARGB(255, 244, 54, 108);
 
       summary.add(
         {
@@ -23,7 +25,7 @@ class ResultsScreen extends StatelessWidget {
           'question': questions[i].text,
           'correct_answer': questions[i].answers[0],
           'user_answer': chosenAnswers[i],
-          'circle_color': circleColor, 
+          'circle_color': circleColor,
         },
       );
     }
@@ -33,9 +35,8 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Calculate correct answers count here
+    
     final int correctAnswersCount = calculateCorrectAnswersCount();
-
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -53,15 +54,16 @@ class ResultsScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(
-              height: 30,
+              height: 30
             ),
             QuestionsSummary(summaryData: 
-              getSummaryData()), //Replaced with all the answers/questions
+              getSummaryData()
+            ), //Replaced with all the answers/questions
             const SizedBox(
-              height: 30,
+              height: 30
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: restartQuiz, 
               child: const Text(
                 'Restart Quiz',
                 style: TextStyle(
@@ -75,16 +77,13 @@ class ResultsScreen extends StatelessWidget {
       ),
     );
   }
-
-  int calculateCorrectAnswersCount() {
+   int calculateCorrectAnswersCount() {
     int correctAnswersCount = 0;
-
     for (var i = 0; i < chosenAnswers.length; i++) {
       if (chosenAnswers[i] == questions[i].answers[0]) {
         correctAnswersCount++;
       }
     }
-
     return correctAnswersCount;
   }
 }
