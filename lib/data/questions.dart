@@ -46,4 +46,13 @@ const questions = [
       'None of the Above'
     ]
   ),
+  QuizQuestion(
+    'Which of the following is not a digital arts major you can take in college?', 
+    [
+      'UX', //correct answer
+      'Photography', 
+      'UI', 
+      'Grahpic Design'
+    ]
+  ),
 ];
