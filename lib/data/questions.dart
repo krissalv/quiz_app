@@ -2,48 +2,48 @@ import 'package:quiz_app/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'How did Ed lose his arm in FMA?', 
+    'What is a common application mainly used for 3D modeling?', 
     [
-      'Putting his brother\'s soul in a suit of armor', 
-      'In a freak cooking accident', 
-      'Fighting the MEG alongside Jason Statham', 
-      'This never happened'
+      'Blender', 
+      'Procreate', 
+      'Clip Studio Paint', //correct answer
+      'Fire Alpaca'
     ]
   ),
   QuizQuestion(
-    'What city is Scar from?', 
+    'What kind of art program is Adobe Illustrator?', 
     [
-      'Ishbal', 
-      'Central City', 
-      'Dublith', 
-      'San Antonio'
+      'Vector Art', //correct answer
+      'Pixel Art', 
+      'Photo Editting', 
+      'Video Editting'
     ]
   ),
   QuizQuestion(
-    'How many times did Naruto fail the graduation test?', 
+    'What is not an Adobe Software?', 
     [
-      '1',
-      '2',
-      '3',
-      '4'
+      'DaVinci Pro', //correct answer
+      'InDesign',
+      'Acrobat',
+      'Photoshop' 
     ]
   ),
   QuizQuestion(
-    'How many seasons does one piece have?', 
+    'Which of the following is the brand that makes a popular device for digital artists?', 
     [
-      '5',
-      '20',
-      '59',
-      '123'
+      'Apple', //correct answer
+      'Microsoft',
+      'Prismacolor',
+      'ASUS' 
     ]
   ),
   QuizQuestion(
-    'What studio created your lie in april?', 
+    'How does one make graphics with a vector art program?', 
     [
-      'Kyoto Studio', 
-      'MAPPA', 
-      'A1', 
-      'Aniplex'
+      'Shapes, lines, and curves', //correct answer
+      'Sketch/pencil style', 
+      'Painting style', 
+      'None of the Above'
     ]
   ),
 ];
